@@ -1,44 +1,123 @@
 @import "tailwindcss";
 
 
+/* ───────────────── FONTS ───────────────── */
 
 @font-face {
-  font-family: "Graphik";
-  src: url("/Graphik-Font/Graphik-Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Graphik";
-  src: url("/Graphik-Font/Graphik-Regular.otf") format("opentype");
+  font-family: "STKBureauSans";
+  src: url("/69b9330c8b70142e4e5f8364_STKBureauSans-Regular.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
+
 @font-face {
-  font-family: "Graphik";
-  src: url("/Graphik-Font/Graphik-Medium.otf") format("opentype");
+  font-family: "STKBureauSans";
+  src: url("/69b9330c8b70142e4e5f8362_STKBureauSans-Medium.woff2")
+    format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
+
 @font-face {
-  font-family: "Graphik";
-  src: url("/Graphik-Font/Graphik-Bold.otf") format("opentype");
-  font-weight: 700;
+  font-family: "STKBureauSans";
+  src: url("/69b9330c8b70142e4e5f8363_STKBureauSans-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
+
+
 
 /* ───────────────── GLOBAL STYLE ───────────────── */
 
+
+html,
 body {
-  font-family: "Graphik", sans-serif;
+
+  font-family: "STKBureauSans", sans-serif;
+
   -webkit-font-smoothing: antialiased;
+
   -moz-osx-font-smoothing: grayscale;
+
   text-rendering: optimizeLegibility;
+
+  overflow-x: hidden;
+
 }
 
+
+
+/* ───────────────── TESTIMONIAL ANIMATION ───────────────── */
+
+
+@keyframes scrollLeft {
+
+  0% {
+    transform: translateX(0);
+  }
+
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+
+@keyframes scrollRight {
+
+  0% {
+    transform: translateX(-50%);
+  }
+
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+
+
+.animate-scroll-left {
+
+  animation: scrollLeft 35s linear infinite;
+
+}
+
+
+
+.animate-scroll-right {
+
+  animation: scrollRight 35s linear infinite;
+
+}
+
+
+
+/* Pause animation when user hovers */
+
+.animate-scroll-left:hover,
+.animate-scroll-right:hover {
+
+  animation-play-state: paused;
+
+}
+
+
+
+/* Remove this if you want normal mouse cursor */
+
+/*
 * {
   cursor: none !important;
 }
+*/
